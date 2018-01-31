@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}TITRE CHANGE{% endblock %}
+{% block title %}LISTE CONTACTS{% endblock %}
 
 {% block body %}
-    BODY CHANGE
+    {%  for contact in contacts %}
+        <li>{{ contact.nom }}</li>
+    {% endfor %}
 {% endblock %}

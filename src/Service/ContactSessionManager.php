@@ -35,6 +35,8 @@ class ContactSessionManager implements IModelManager
     public function insert($object)
     {
         $contacts = $this->getAll();
+        $contacts[]=$object;
+        $this->updateSession($contacts);
 
     }
 

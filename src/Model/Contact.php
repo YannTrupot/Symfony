@@ -17,4 +17,13 @@ class Contact
     private $tel;
     private $mobile;
 
+    public function __construct()
+    {
+        $this->nom="SMITH";
+    }
+
+    public function getNom(){
+        return $this->nom;
+    }
+
 }

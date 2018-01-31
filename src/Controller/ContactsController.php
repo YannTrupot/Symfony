@@ -17,7 +17,8 @@ class ContactsController extends Controller
     public function index(ContactSessionManager $session)
     {
         $session->insert(new Contact());
-        return $this->render("index.html.twig");
+        $contacts=$session->getAll();
+        return $this->render("contacts/listeContacts.html.twig",["contacts"=>$contacts]);
     }
 
     /**
@@ -34,5 +35,13 @@ class ContactsController extends Controller
     public function editContact($index=1,ContactSessionManager $session)
     {
         return $this->render("contacts/editContacts.html.twig",["index" => $index]);
+    }
+
+    /**
+     * @Route("/contacts/display/{index}")
+     */
+    public function afficherContact($index=1,ContactSessionManager $session){
+        $contact = $session->get($index);
+        return $this->render("contacts/afficherContacts.html.twig",["contact" => $contact]);
     }
 }
