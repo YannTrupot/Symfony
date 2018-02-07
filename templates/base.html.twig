@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %} TITRE {% endblock %}</title>
+        <title>{% block title %} BASE {% endblock %}</title>
         <script
                 src="https://code.jquery.com/jquery-3.1.1.min.js"
                 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -14,11 +14,11 @@
         {% endblock %}
     </head>
     <body>
-        <div class="ui vertical stripe segment" style="border:solid black 2px; padding:10px; margin-bottom:10px">{% block menu %} MENU {% endblock %}</div>
-        <div class="ui vertical stripe segment" style="border:solid black 2px; padding:10px; margin-bottom:10px">{% block body %} BODY {% endblock %}</div>
-        <div class="ui vertical stripe segment" style="border:solid black 2px; padding:10px; margin-bottom:10px">{% block detail %} DETAIL {% endblock %}</div>
+        <div class="ui container" >{% block menu %}  {% endblock %}</div>
+        <div class="ui container" >{% block body %}  {% endblock %}</div>
+        <div class="ui container" >{% block detail %}  {% endblock %}</div>
     </body>
-    <footer class="ui vertical stripe segment" style="border:solid black 2px; padding:10px; margin-bottom:10px">
-        {% block footer %} TEST FOOTER{% endblock %}
+    <footer class="ui container">
+        {% block footer %} {% endblock %}
     </footer>
 </html>

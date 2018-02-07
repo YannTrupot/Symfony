@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}AJOUTER UN CONTACT{% endblock %}
+{% block title %}Edition du contact {{ index }}{% endblock %}
 
 {% block body %}
-    <h1 class="ui"> Ajout d'un nouveau contact</h1>
+    <h1 class="ui"> Edition du contact {{ index }}</h1>
     <div class="ui divider"></div>
     <form class="ui form" type="POST" action="/contacts/update">
         <div class="field">
@@ -21,8 +21,8 @@
         <div class="field">
             <input type="text" name="mobile" placeholder="Mobile" value="{{ contact.mobile }}">
         </div>
-        <input type="hidden" name="index" value=-1>
-        <input class="ui button" type="submit" value="Ajouter" ><br>
+        <input type="hidden" name="index" value={{ index }}>
+        <input class="ui button" type="submit" value="Modifier" ><br>
         <br>
     </form>
 {% endblock %}

@@ -3,7 +3,13 @@
 {% block title %}LISTE CONTACTS{% endblock %}
 
 {% block body %}
+    <h1 class="ui"> Liste des contacts</h1>
+    <div class="ui divider"></div>
+    <div class="ui list">
+        {% set i = 0 %}
     {%  for contact in contacts %}
-        <li>{{ contact.nom }}</li>
+        <a class="item" href="/contacts/display/{{ i }}">{{ contact.nom }}</a>
+        {% set i = i+1 %}
     {% endfor %}
+    </div>
 {% endblock %}

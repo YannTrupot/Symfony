@@ -1,7 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}INFO CONTACT{% endblock %}
+{% block title %}INFO CONTACT {{ index }}{% endblock %}
 
 {% block body %}
-    <div> NOM: {{ contact.nom }}</div>
+    <h1 class="ui"> Detail du contact {{ index }}</h1>
+    <div class="ui divider"></div>
+    <div class="ui container"> Nom :  {{ contact.nom }}</div><br>
+    <div class="ui container"> Prenom :  {{ contact.prenom }}</div><br>
+    <div class="ui container"> Email :  {{ contact.email }}</div><br>
+    <div class="ui container"> Tel :  {{ contact.tel }}</div><br>
+    <div class="ui container"> Mobile :  {{ contact.mobile }}</div><br>
+    <input class="ui button" type="button" onclick="location.href='/contacts';" value="Retour">
+    <input class="ui button" type="button" onclick="location.href='/contacts/edit/{{ index }}';" value="Edit">
 {% endblock %}

@@ -40,6 +40,11 @@ class ContactSessionManager implements IModelManager
 
     }
 
+    public function clean(){
+        $contacts = null;
+        $this->updateSession($contacts);
+    }
+
     public function update($object, $value)
     {
         // TODO: Implement update() method.
@@ -52,7 +57,7 @@ class ContactSessionManager implements IModelManager
 
     public function get($index)
     {
-        // TODO: Implement get() method.
+        return $this->session->get(self::KEY)[$index];
     }
 
     public function filterBy($keyAndValues)
