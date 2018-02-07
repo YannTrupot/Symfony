@@ -26,7 +26,9 @@ class ContactsController extends Controller
      */
     public function newContact(ContactSessionManager $session)
     {
-        return $this->render("contacts/newContact.html.twig");
+        $contact = new Contact();
+        $session->insert($contact);
+        return $this->render("contacts/newContact.html.twig",["contact" => $contact]);
     }
 
     /**

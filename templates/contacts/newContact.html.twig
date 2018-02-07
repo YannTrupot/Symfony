@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AJOUTER UN CONTACT{% endblock %}
+
+{% block body %}
+    <form>
+        <input class="ui input" type="text" placeholder="Nom" value="{{ contact.nom }}"><br>
+        <br>
+        <input class="ui input" type="text" placeholder="Prenom" value="{{ contact.prenom }}"><br>
+        <br>
+        <input class="ui input" type="text" placeholder="Mail" value="{{ contact.email }}"><br>
+        <br>
+        <input class="ui input focus" type="text" placeholder="Telephone" value="{{ contact.tel }}"><br>
+        <br>
+        <input class="ui input focus" type="text" placeholder="Mobile" value="{{ contact.mobile }}"><br>
+        <br>
+        <input class="ui button" type="button" value="Ajouter" action="submit"><br>
+        <br>
+    </form>
+{% endblock %}
