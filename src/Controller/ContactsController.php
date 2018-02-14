@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\Contact;
+use App\Entity\Contact;
 use App\Repository\ContactRepository;
 use App\Service\ContactSessionManager;
 use App\Service\IModelManager;
@@ -19,7 +19,6 @@ class ContactsController extends Controller
      */
     public function index(ContactRepository $session)
     {
-
         $contacts = $session->getAll();
         return $this->render("contacts/listeContacts.html.twig",["contacts"=>$contacts]);
 
@@ -68,7 +67,7 @@ class ContactsController extends Controller
         $selected = [];
         $recherche = $request->get("value");
         $n = -1;
-        for ($i = 0; $i < $session->count();$i++){
+        for ($i = 0; $i < $session->size();$i++){
             if($session->get($i)->getNom() == $recherche){
                 $selected[$n++] = $session->get($i);
             }

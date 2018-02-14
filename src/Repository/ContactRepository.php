@@ -39,6 +39,10 @@ class ContactRepository extends ServiceEntityRepository implements IModelManager
 
     public function insert($object)
     {
+        var_dump($object);
+        $r = $this->_em->persist($object);
+        $this->_em->flush();
+        return $r;
 
     }
 
@@ -63,21 +67,20 @@ class ContactRepository extends ServiceEntityRepository implements IModelManager
         foreach ($contacts as $contact){
             $this->_em->remove($contact);
         }
+        $this->_em->flush();
     }
 
     public function get($index)
     {
         return $this->createQueryBuilder('c')
-            ->where('c.something = :value')->setParameter('value', $value)
+            ->where('c.id = :value')->setParameter('value', $index+1)
             ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
-            ;
+            ->getSingleResult();
     }
 
     public function size(){
-        return $this->count();
+        return $this->count([]);
         /*try {
             return $this->createQueryBuilder('c')
                 ->select('COUNT(c)')

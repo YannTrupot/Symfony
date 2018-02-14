@@ -15,7 +15,9 @@
     <div class="ui list">
         {% set i = 0 %}
     {%  for contact in contacts %}
-        <a class="item" href="/contacts/display/{{ i }}">{{ contact.nom }}</a>
+        <div class="ui button" style="font-size: 18px;width:100%;text-align: left;">
+            <a class="item" href="/contacts/display/{{ i }}">{{ contact.nom }}</a>
+        </div><br><br>
         {% set i = i+1 %}
     {% endfor %}
     </div>
