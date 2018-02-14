@@ -62,12 +62,12 @@ class ContactSessionManager implements IModelManager
 
     public function filterBy($keyAndValues)
     {
-        // TODO: Implement filterBy() method.
+
     }
 
-    public function count()
+    public function size()
     {
-        // TODO: Implement count() method.
+        return count($this->getAll());
     }
 
     public function select($indexes)

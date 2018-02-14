@@ -5,6 +5,13 @@
 {% block body %}
     <h1 class="ui"> Liste des contacts</h1>
     <div class="ui divider"></div>
+    <form class="ui form" type="POST" action="/contacts/search">
+        <div class="ui input">
+            <input name="value" type="text" placeholder="Contact">
+        </div>
+        <input type="submit" class="ui button" value="Rechercher">
+    </form>
+    <input class="ui button" type="button" onclick="location.href='/contacts/new';" value="Nouveau Contact">
     <div class="ui list">
         {% set i = 0 %}
     {%  for contact in contacts %}

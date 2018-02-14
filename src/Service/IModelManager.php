@@ -24,7 +24,7 @@ interface IModelManager
 
     public function filterBy($keyAndValues);
 
-    public function count();
+    public function size();
 
     public function select($indexes);
 
